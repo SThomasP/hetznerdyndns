@@ -15,3 +15,6 @@ else
  echo "$(date): Error: Record set incorrectly value, should be A or AAAA was $RECORD" >> "$LOG_FILE"
  exit 1
 fi
+
+# Get the current external IP address
+CURRENT_IP=$(curl -$IPVER -s $IPLOOKUP)
