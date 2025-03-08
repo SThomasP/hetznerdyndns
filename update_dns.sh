@@ -10,7 +10,7 @@ DNS_INFO=$(curl "https://dns.hetzner.com/api/v1/records/$RECORD_ID" -H "$AUTORIZ
 # Extract the DNS IP address and TTL value from the API response
 DNS_IP=$(echo "$DNS_INFO" | jq  '.record.value')
 RECORD=$(echo "$DNS_INFO" | jq -r '.record.type')
-TTL=$(echo "$DNS_INFO" | jq -r '.record.ttl')
+TTL=$(echo "$DNS_INFO" | jq -r '.record.ttl // 7200')
 SUBDOMAIN=$(echo "$DNS_INFO" | jq -r '.record.name')
 
 # Set the log file path
