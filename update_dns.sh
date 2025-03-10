@@ -1,8 +1,6 @@
 #!/bin/bash
 # load the .env file
 . $1
-# Set the log file path
-LOG_FILE="./logs/update_dns.log"
 
 # Set the API Authorization Header
 AUTORIZATION="Auth-API-Token: $API_KEY"
