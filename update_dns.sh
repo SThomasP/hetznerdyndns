@@ -51,7 +51,7 @@ RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" \
 
 if [ "$RESPONSE" == "200" ] || [ "$RESPONSE" == "201" ]; then
   # Log when the DNS record is updated
-  echo "$(date): DNS A record updated to $CURRENT_IP with TTL $TTL seconds" >> "$LOG_FILE"
+  echo "$(date): DNS $RECORD record updated to $CURRENT_IP with TTL $TTL seconds" >> "$LOG_FILE"
 else
   # Log an error if the API request fails
   echo "$(date): API request failed with status code $RESPONSE" >> "$LOG_FILE"
