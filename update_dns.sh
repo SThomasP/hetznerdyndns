@@ -30,7 +30,7 @@ CURRENT_IP=$(curl -$IPVER -s $IPLOOKUP)
 if [ "$CURRENT_IP" == $DNS_IP ]; then
   # Log when the script is run without any IP change
   echo "$(date): IP address unchanged at $CURRENT_IP" >> "$LOG_FILE"
-  exit 1
+  exit 0
 fi
 # Log when there is an IP change
 echo "$(date): IP address changed from $DNS_IP to $CURRENT_IP" >> "$LOG_FILE"
